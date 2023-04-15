@@ -5,17 +5,33 @@ import Image from "next/image";
 import Facebook from '../../../img/icons/facebook.svg';
 import Git from '../../../img/icons/github.svg';
 import { useEffect, useState } from "react";
+import ArrowShow from '../../../img/icons/arrowShow.svg';
 
 const SocialMedia:React.FC = () => {
 
     const [show, setShow] = useState(false);
+    const [showSocial, setShowSocial] = useState(true);
 
   useEffect(()=>{
     setTimeout(()=> setShow(true),500);
   },[])
 
   return (
-    <div className={`p-1 absolute left-5 top-0 bg-[#223223] flex items-center gap-6 rounded-md flex-col max-w-[50px] ${show ? 'opacity-100 animate-bounceOnce' : 'opacity-0'} transition-opacity duration-100 border`}>
+    <div className={`p-1 absolute left-5 top-0 bg-[#223223] flex items-center gap-6 rounded-md flex-col max-w-[50px] ${show ? 'opacity-100 animate-bounceOnce' : 'opacity-0'} transition-all duration-100 border z-50 lg:animate-none ${!showSocial ? 'lg:translate-x-0 lg:visible' : 'lg:-translate-x-20 lg:invisible'}`}>
+     <div className={`h-fit absolute flex flex-col -right-full lg:visible lg:flex lg:pointer-events-auto transition-all ${showSocial ? 'rotate-0 animate-pulse' : 'rotate-180'}`}>
+      <Image  /*кнопка показа соц сети на маленьких экранах */
+        onClick={() => setShowSocial(!showSocial)}
+        src={ArrowShow}
+        width={40}
+        height={40}
+        alt="Показать соц сети"
+        title="Показать соцсети"
+        aria-label="Показать соцсети Алексея"
+        className="opacity-0 lg:opacity-100"
+      />
+      {/* <p>Follow</p> */}
+      </div> 
+
         <Link className="hover:opacity-70 transition-all" title="инстаграмм Алексей Тихонов" aria-label="инстаграмм Алексей Тихонов" href={"https://www.instagram.com/clerictihonov/"}>
         <Image
             src={Instagram}

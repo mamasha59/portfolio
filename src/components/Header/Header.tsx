@@ -32,7 +32,7 @@ const Header:React.FC<HeaderProps> = ({scrollTo, rotateState}) => {
           <ul className="flex w-full justify-evenly text-sm">
             <li onClick={()=> setRotate(!rotate)} title="Обо мне/Главная" aria-label="Обо мне/Главная" className="underline hover:italic cursor-pointer">Обо мне</li>
             <li onClick={()=> scrollToSection(scrollTo)} title="Портфолио" aria-label="Портфолио" className="underline hover:italic cursor-pointer">Портфолио</li>
-            <li title="в разработке" aria-label="в разработке" className="underline hover:italic opacity-10"><Link className="flex cursor-help" href={'#'}>Блог</Link></li>
+            <li title="в разработке" aria-label="в разработке" className="underline hover:italic opacity-10 sm:hidden"><Link className="flex cursor-help" href={'#'}>Блог</Link></li>
           </ul>
         </nav>
 

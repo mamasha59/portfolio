@@ -41,7 +41,18 @@ module.exports = {
                 },
         },
       },
-    }
+    },
+    screens: {
+      'lg': {'max': '1070px'},
+
+      'md': {'max': '900px'},
+
+      'midl' : {'max': '767px'},
+
+      'sl': {'max': '540px'},
+
+      'sm': {'max': '425px'},
+    },
   },
   plugins: [
   ],

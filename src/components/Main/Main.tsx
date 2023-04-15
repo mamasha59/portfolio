@@ -22,9 +22,9 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
   }
   
   return (
-    <div className="pt-16 flex justify-around relative">
+    <div className="pt-16 w-full max-h-[500px] h-full flex justify-around relative">
       <SocialMedia/>
-      <div onClick={()=> setRotate(!rotate)} className="flex max-w-[448px] w-full perspective">
+      <div onClick={()=> setRotate(!rotate)} className="flex max-w-[448px] w-full perspective midl:absolute midl:w-full midl:h-full midl:backdrop-blur-sm">
 
         <div className={`inner w-full h-full transition-all duration-700 relative ${rotate ? 'inner back' : ''}`}>
           <div className="absolute w-full h-full z-20 flex flex-col cursor-pointer">
@@ -40,24 +40,24 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
               </div> 
           </div>
           <div className={`absolute w-full h-full z-10 flex flex-col back text-sm ${rotate ? 'opacity-100' : 'opacity-0'} transition-all duration-700`}>
-            <div>
+            <div className="midl:text-base">
               <pre className="text-[grey]">&lt;p&gt;</pre>
-                  C января 2021 года я начал обучаться на курсах ЯндексПрактикум, по направлению<span className="text-orange block">front-end разработчик.</span> На курсах я изучал верстку, работу с макетами figma, настраивал логику сайта. Работал с back-end для front-end разработчика.
-                  <br /> Изучил JavaScript и React. <br /> Изучаю Redux Toolkit, Typescript. <br /> Делаю пет проекты и выкладываю их на свой аккаунт <span className="text-orange">GitHub. <br /> Все свои работы делаю адаптивными под все браузеры и устройства.</span>
+                  C января 2021 года я начал обучаться на курсах ЯндексПрактикум, по направлению<span className="text-orange block">front-end разработчик.</span> Изучал верстку, figma, настраивал логику сайта. Работал с back-end для front-end.
+                  <br /> Изучил JavaScript и React. <br /> Изучаю Redux Toolkit, Typescript. <br /> Делаю пет проекты и выкладываю на аккаунт <span className="text-orange">GitHub. <br /> Все свои работы делаю адаптивными под все браузеры и устройства.</span>
               <pre className="text-[grey]">&lt;/p&gt;</pre>
             </div>
           </div>
         </div>
 
       </div>
-      <div className="relative">
-        <div className="absolute -top-10 text-sm flex justify-between w-full">
-          <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть диплом" aria-label="Посмотреть диплом" href={'https://disk.yandex.ru/i/HH4kMPGDHV-CAw'} >Диплом ЯП</Link>
+      <div className="relative h-full">
+        <div className="absolute -top-10 text-sm flex justify-between w-full midl:flex midl:justify-end midl:gap-1">
+          <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть диплом" aria-label="Посмотреть диплом" href={'https://disk.yandex.ru/i/HH4kMPGDHV-CAw'} >Диплом <span className="text-yellow-500">Я</span>П</Link>
           <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть все проекты" aria-label="Посмотреть все проекты" href={'https://github.com/mamasha59'} >GitHub</Link>
         </div>
-        <Image src={img1} width={300} alt="картинка алеши" className="shadow-xl z-30 bg-orange"/>
+        <Image src={img1} width={300} alt="картинка алеши" className="shadow-xl z-30 bg-orange midl:invisible"/>
       </div>
-      <div onClick={()=>scrollToSection(scrollTo)} title="скрол вниз" className="absolute bottom-0 left-1/2 -translate-x-[50%] -translate-y-[100%] w-5 h-8 border rounded-md cursor-pointer overflow-hidden">
+      <div onClick={()=>scrollToSection(scrollTo)} title="скрол вниз" className={`absolute bottom-0 left-1/2 -translate-x-[50%] -translate-y-[100%] w-5 h-8 border rounded-md cursor-pointer overflow-hidden ${!rotate ? '' : 'midl:hidden'}`}>
         <span className="flex justify-center items-center text-sm p-1 text-orange animate-bounce border-b border-blue-300">&darr;</span>
       </div>
     </div>
