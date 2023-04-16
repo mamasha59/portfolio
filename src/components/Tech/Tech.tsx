@@ -7,14 +7,13 @@ import Link from "next/link";
 
 const Tech:React.FC = () => {
   return (
-    <div className="border my-4 rotate-1 flex bg-[#223223]">
-      <ul className="flex w-full justify-evenly py-1">
+      <ul className="flex w-full justify-evenly py-1 border my-4 rotate-1 bg-[#223223] sm:text-xs">
         <li>
           <Link
             title="перейти к проекту"
             aria-label="перейти к проекту что использует html"
             href={"#"}
-            className=""
+            className="flex flex-col midl:items-center"
           >
             <Image src={HTML} width={30} height={30} alt="язык HTML" />
             HTML.
@@ -25,6 +24,7 @@ const Tech:React.FC = () => {
             title="перейти к проекту"
             aria-label="перейти к проекту что использует CSS"
             href={"#"}
+            className="flex flex-col midl:items-center"
           >
             <Image src={CSS} width={30} height={30} alt="язык CSS" />
             CSS.
@@ -35,6 +35,7 @@ const Tech:React.FC = () => {
             title="перейти к проекту"
             aria-label="перейти к проекту что использует html"
             href={"#"}
+            className="flex flex-col midl:items-center"
           >
             <Image
               src={JavaScript}
@@ -50,13 +51,13 @@ const Tech:React.FC = () => {
             title="перейти к проекту"
             aria-label="перейти к проекту что использует html"
             href={"#"}
+            className="flex flex-col midl:items-center"
           >
             <Image src={ReactIcon} width={30} height={30} alt="язык React" />
             React.
           </Link>
         </li>
       </ul>
-    </div>
   );
 };
 
