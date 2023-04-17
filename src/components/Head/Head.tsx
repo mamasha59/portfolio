@@ -20,7 +20,7 @@ const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
         <Header scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
         <Main scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
         <Tech/>
-        <div className="absolute top-0 w-full h-full -z-[5]">
+        <div className="absolute top-0 left-0 right-0 w-full h-full -z-[5]">
           <Canvas>
             <mesh>            
             <OrbitControls enableZoom={false} autoRotate/>

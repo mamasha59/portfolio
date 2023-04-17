@@ -21,7 +21,7 @@ export default function RootLayout({children}: LayoutProps) {
  
   return (
     <html className={`h-screen snap-y snap-mandatory scroll-smooth overflow-y-auto hide-scrollbar ${inter.className}`} lang="ru">
-      <body className='text-lg max-w-7xl mx-auto bg-[#000] text-[#f2d6d6] overflow-hidden'>
+      <body className='text-lg max-w-7xl mx-auto bg-[#000] text-[#f2d6d6]'>
           {children}
       </body>
     </html>
