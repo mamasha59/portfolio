@@ -14,7 +14,7 @@ const Header:React.FC<HeaderProps> = ({scrollTo, rotateState}) => {
 
   const scrollToSection = (element:RefObject<HTMLElement>) => {
     window.scrollTo({
-      top: element.current?.offsetTop,
+      top: element.current?.offsetHeight,
       behavior: "smooth"
     })
   }
