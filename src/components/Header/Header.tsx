@@ -18,11 +18,12 @@ const Header:React.FC<HeaderProps> = ({scrollTo, rotateState}) => {
       behavior: "smooth"
     })
   }
+
   return (
-    <div className="flex justify-between items-center relative">
+    <div className="flex justify-between items-center relative py-[1vh]">
       <Image alt="лого разработчика"
           src={Logo}
-          width={100}
+          width={80}
           height={100}
           title="Логотип Алексей Тихонов"
           aria-label="Логотип Алексей Тихонов"

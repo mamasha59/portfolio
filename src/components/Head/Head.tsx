@@ -7,26 +7,29 @@ import Tech from "../Tech/Tech";
 import { RefObject, useState } from "react";
 
 interface HeadProps{
-  element: RefObject<HTMLElement>;
+  refPortfolio: RefObject<HTMLElement>;
+  refHead: RefObject<HTMLElement>;
 }
 
-const Head:React.FC<HeadProps> = ({element}) => {
+const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
   
-  const [rotate, setRotate] = useState(false); // состояние блока о себе, ротате
+  const [rotate, setRotate] = useState(false); // состояние блока о себе, rotate
 
   return (
-    <header className="h-screen snap-center relative flex justify-between flex-col">
-        <Header scrollTo={element} rotateState={[rotate, setRotate]}/>
-        <Main scrollTo={element} rotateState={[rotate, setRotate]}/>
+    <header ref={refHead} className="h-screen px-3 snap-center relative flex justify-between flex-col">
+        <Header scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
+        <Main scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
         <Tech/>
         <div className="absolute top-0 w-full h-full -z-[5]">
           <Canvas>
+            <mesh>            
             <OrbitControls enableZoom={false} autoRotate/>
             <ambientLight intensity={1.2}/>
             <directionalLight position={[3,3,3]}/>
             <Sphere args={[1,200,300]} scale={1}>
                 <MeshDistortMaterial color={'#0988e8'} attach={'material'} distort={.7} speed={2}/>
             </Sphere>
+            </mesh>
           </Canvas>
         </div>
     </header>

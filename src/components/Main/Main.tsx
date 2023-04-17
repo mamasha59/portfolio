@@ -23,9 +23,9 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
   }
   
   return (
-    <div className="pt-16 w-full max-h-[500px] h-full flex justify-around relative md:pt-3 midl:p-0">
+    <div className="pt-3 w-full max-h-[500px] h-full flex justify-around relative lg:pt-3 midl:p-0">
       <SocialMedia/>
-      <div onClick={()=> setRotate(!rotate)} className="flex max-w-[448px] w-full perspective midl:absolute midl:w-full midl:h-full midl:backdrop-blur-sm">
+      <div onClick={()=> setRotate(!rotate)} className="flex max-w-[448px] w-full perspective midl:absolute midl:w-full midl:h-full midl:top-2 midl:backdrop-blur-sm">
 
         <div className={`inner w-full h-full transition-all duration-700 relative ${rotate ? 'inner back' : ''}`}>
           <div className="absolute w-full h-full z-20 flex flex-col cursor-pointer">
@@ -46,13 +46,13 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
       </div>
       
       <div className="relative h-fit min-w-[250px]">
-        <div className="absolute -top-10 text-sm flex justify-between w-full midl:flex midl:justify-between midl:top-0 sm:justify-end">
+        <div className="absolute -top-10 text-sm flex justify-between w-full midl:flex midl:justify-between midl:top-0 sm:justify-end sm:gap-3">
           <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть диплом" aria-label="Посмотреть диплом" href={'https://disk.yandex.ru/i/HH4kMPGDHV-CAw'} >Диплом <span className="text-yellow-500">Я</span>П</Link>
           <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть все проекты" aria-label="Посмотреть все проекты" href={'https://github.com/mamasha59'} >GitHub</Link>
         </div>
         <Image src={img1} width={300} alt="картинка алеши" className="shadow-xl z-30 bg-orange midl:hidden"/>
       </div>
-      <div onClick={()=>scrollToSection(scrollTo)} title="скрол вниз" className={`absolute bottom-0 left-1/2 -translate-x-[50%] -translate-y-[100%] w-5 h-8 border rounded-md cursor-pointer overflow-hidden ${!rotate ? '' : 'midl:hidden'}`}>
+      <div onClick={()=>scrollToSection(scrollTo)} title="скрол вниз" className={`absolute z-50 bottom-0 left-1/2 -translate-x-[50%] -translate-y-[100%] w-5 h-8 border rounded-md cursor-pointer overflow-hidden ${!rotate ? '' : 'midl:hidden'}`}>
         <span className="flex justify-center items-center text-sm p-1 text-orange animate-bounce border-b border-blue-300">&darr;</span>
       </div>
     </div>

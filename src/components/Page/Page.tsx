@@ -5,12 +5,13 @@ import { useRef } from "react";
 
 const Page:React.FC = () => {
 
-const scrollTo = useRef<HTMLElement>(null); // блок портфолио
+const scrollToPortfolio = useRef<HTMLElement>(null); // блок портфолио
+const scrollToHead = useRef<HTMLElement>(null); // блок head
     
 return (
         <>
-            <Head element={scrollTo}/>
-            <Portfolio element={scrollTo}/>
+            <Head refHead={scrollToHead} refPortfolio={scrollToPortfolio}/>
+            <Portfolio refHead={scrollToHead} refPortfolio={scrollToPortfolio}/>
         </>
   )
 };
