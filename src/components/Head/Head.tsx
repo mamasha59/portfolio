@@ -1,10 +1,11 @@
 "use client"
 import { Canvas } from "@react-three/fiber";
-import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import { MeshDistortMaterial, OrbitControls, Sphere, useCamera } from "@react-three/drei";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Tech from "../Tech/Tech";
-import { RefObject, useState } from "react";
+import { RefObject, useContext, useState } from "react";
+import { useGlobalContext } from "@/Context/store";
 
 interface HeadProps{
   refPortfolio: RefObject<HTMLElement>;

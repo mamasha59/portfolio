@@ -13,10 +13,12 @@ const Header:React.FC<HeaderProps> = ({scrollTo, rotateState}) => {
   const [rotate, setRotate] = rotateState;
 
   const scrollToSection = (element:RefObject<HTMLElement>) => {
-    window.scrollTo({
-      top: element.current?.offsetHeight,
-      behavior: "smooth"
-    })
+    if(element && element.current){
+      window.scrollTo({
+        top: element.current.offsetTop + element.current.offsetHeight, // test 
+        behavior: "smooth"
+      })
+    }
   }
 
   return (

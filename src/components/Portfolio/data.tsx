@@ -2,8 +2,9 @@ import Shop from '../../img/onlineShop.png';
 import LandingPage from '../../img/landing.png';
 import Netflix from '../../img/netflix.png';
 import Facebook from '../../img/facebook.png';
+import { Project } from '@/Types/ProjectType';
 
- const projects = [
+const projects = [
     { 
         title: "интернет магазин",
         techStackShort: ['HTML', 'CSS', 'JS', 'React', 'NextJs'],
@@ -22,7 +23,7 @@ import Facebook from '../../img/facebook.png';
     }
 ]
 
-const projectsFull = [
+const projectsFull:Project[] = [
     {
         idName: 'интернет магазин',
         techStackFull: ['HTML', 'CSS', 'JS', 'React','react hooks', 'NextJs', 'Tailwind', 'Tailwind ScrollBar',  'ReactSlick Слайдер', 'Intersection-Observer', 'Graphql Apollo', 'Prettier'],

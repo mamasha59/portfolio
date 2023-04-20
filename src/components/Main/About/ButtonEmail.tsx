@@ -1,4 +1,4 @@
-import Gmail from '../../img/icons/gmail.svg';
+import Gmail from '../../../img/icons/gmail.svg';
 import Image from "next/image";
 
 const ButtonEmail:React.FC = () => {

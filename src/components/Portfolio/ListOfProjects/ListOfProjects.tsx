@@ -15,7 +15,7 @@ const ListOfProjects:React.FC<ListOfProjectsProps> = ({setIndex,currentIndex}) =
     <aside className="flex justify-start py-6 flex-col overflow-y-auto sl:justify-center sl:px-3 sl:max-w-[40%]">
         {projects.map((i,index:number) =>
         <div key={index} className="flex flex-col p-4 rounded-2xl sm:p-0">
-            <h3 onClick={() => setIndex(index,i.title)} className={`animate-shopping cursor-pointer ${currentIndex === index ? 'opacity-100 underline' : 'opacity-50'} sm:text-base`}>{i.title}</h3>
+            <h2 onClick={() => setIndex(index,i.title)} className={`animate-shopping cursor-pointer ${currentIndex === index ? 'opacity-100 underline' : 'opacity-50'} sm:text-base`}>{i.title}</h2>
             <ul className={`flex gap-1 max-w-xs flex-wrap ${currentIndex === index ? ' opacity-100 visible translate-y-0' : '-translate-y-full opacity-0 invisible'} transition-all sl:text-xs`}>
                 {i.techStackShort.map((tech,index) => 
                     <li className="flex items-center" key={index}>

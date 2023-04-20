@@ -15,13 +15,12 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(0); // текущий индекс открытого блока
 
 
-  const current = projectsFull.find(e => e.idName === projectName); // по имени проекта ищем полную информацию
+  const current = projectsFull.find(e => e?.idName === projectName); // по имени проекта ищем полную информацию
 
   const handleItemClick = (index:number,name:string):void => { // заменить активный индекс
     setActiveIndex(activeIndex === index ? null : index);
     setProjectName(name);
   };
-
 
   return (
         <main ref={refPortfolio} className="h-screen snap-end border border-t-orange-700 flex relative">

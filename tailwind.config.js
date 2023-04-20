@@ -20,7 +20,8 @@ module.exports = {
         bounceOnce: "bounceOnce ease-in-out 2s",
         shopping: "shopping 3s ease-in-out infinite",
         zoomSpace: "zoomSpace 20s alternate infinite",
-        goShip: "startShip 2s ease-in-out both",
+        goShip: "startShip 5s ease-in-out both",
+        appear: "appear 1s ease-in-out both"
       },
       keyframes: {
         bounceOnce: {
@@ -43,19 +44,30 @@ module.exports = {
           },
         },
         startShip: {
-          "0%, 100%": {
-            top: "10%",
+          "0%": {
+            top: "87%",
             transform: 'translateX(0) rotate(0)'
           },
           "10%, 30%, 50%, 70%, 90%": {
             transform: 'translateX(-5px) rotate(-5deg)',
+            top: '0%'
           },
-          " 20%, 40%, 60%, 80%":{
-            top: "1%",
+          "20%, 40%, 60%, 80%":{
+            top: "50%",
             transform: 'translateX(5px) rotate(5deg)'
           },
-    
+          '100%': {
+            transform: 'translateX(0) rotate(0)'
+          }
         },
+        appear :{
+          '0%':{
+            transform: 'scale(0)'
+          },
+          '100%':{
+            transform: 'scale(1)'
+          }
+        }
       },
     },
     screens: {
