@@ -22,7 +22,7 @@ const SocialMedia:React.FC<{show:boolean}> = ({show}) => {
         alt="Показать соц сети"
         title="Показать соцсети"
         aria-label="Показать соцсети Алексея"
-        className="opacity-0 lg:opacity-100"
+        className="opacity-0 lg:opacity-100 cursor-pointer"
       />
       </div> 
 
