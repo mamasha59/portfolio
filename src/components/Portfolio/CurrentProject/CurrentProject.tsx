@@ -4,6 +4,7 @@ import { RefObject, useState } from "react";
 import { Project } from "@/Types/ProjectType";
 import ProjectLinks from "./ProjectLinks/ProjectLinks";
 import ProjectPreview from "./ProjectPreview/ProjectPreview";
+import useScrollToSection from "@/Hooks/useScrollToSection";
 
 interface CurrentProjectProps{
     current: Project,
@@ -13,16 +14,12 @@ interface CurrentProjectProps{
 const CurrentProject:React.FC<CurrentProjectProps> = ({current,refHead}) => {
 
     const [up,setUp] = useState(false); // состояние при клике на кнопку скролл
+    const scrollToSection = useScrollToSection();
     
-    const scrollToSection = (element:RefObject<HTMLElement>) => {
+    const handleClick = () => {
         setTimeout(() => {
-          if(element && element.current){
-            window.scrollTo({
-              top: element.current.offsetTop,
-              behavior: "smooth"
-              })
+          scrollToSection(refHead,"top");
             setUp(false);
-          }
         },500)
       setUp(true);
     }
@@ -34,12 +31,12 @@ const CurrentProject:React.FC<CurrentProjectProps> = ({current,refHead}) => {
       <Image
         src={StarScroll}
         width={80}
-        height={40}
+        height={80}
         alt="скролл вверх"
-        onClick={() => scrollToSection(refHead)}
+        onClick={handleClick}
         title="скролл вверх"
         aria-label="скролл вверх"
-        className={`cursor-pointer absolute flex h-fit -left-[53px] bottom-0 hover:opacity-60 transition-all ${up ? 'animate-goShip' : ''}`}
+        className={`cursor-pointer absolute flex w-auto -left-[53px] bottom-0 hover:opacity-60 transition-all ${up ? 'animate-goShip' : ''}`}
         />
     </div>
   )

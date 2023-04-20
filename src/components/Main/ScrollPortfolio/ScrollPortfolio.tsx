@@ -1,3 +1,4 @@
+import useScrollToSection from "@/Hooks/useScrollToSection";
 import { RefObject } from "react";
 
 interface ScrollPortfolioProps{
@@ -6,14 +7,7 @@ interface ScrollPortfolioProps{
 
 const ScrollPortfolio:React.FC<ScrollPortfolioProps> = ({scrollTo}) => {
 
-    const scrollToSection = (element:RefObject<HTMLElement>) => {
-      if(element && element.current){
-        window.scrollTo({
-          top: element.current.offsetTop + element.current.offsetHeight,
-          behavior: "smooth"
-        })
-      } 
-    }
+  const scrollToSection  = useScrollToSection();
       
   return (
     <div onClick={()=>scrollToSection(scrollTo)} title="скрол вниз" className="absolute z-50 bottom-0 left-1/2 -translate-x-[50%] -translate-y-[100%] w-5 h-8 border rounded-md cursor-pointer overflow-hidden">

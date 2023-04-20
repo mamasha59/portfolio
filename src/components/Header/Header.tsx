@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../img/icons/logo.svg';
 import { RefObject } from "react";
+import useScrollToSection from "@/Hooks/useScrollToSection";
 
 interface HeaderProps{
   scrollTo: RefObject<HTMLElement>,
@@ -12,24 +13,19 @@ const Header:React.FC<HeaderProps> = ({scrollTo, rotateState}) => {
 
   const [rotate, setRotate] = rotateState;
 
-  const scrollToSection = (element:RefObject<HTMLElement>) => {
-    if(element && element.current){
-      window.scrollTo({
-        top: element.current.offsetTop + element.current.offsetHeight, // test 
-        behavior: "smooth"
-      })
-    }
-  }
+  const scrollToSection  = useScrollToSection();
 
   return (
     <div className="flex justify-between items-center relative py-[1vh]">
-      <Image alt="лого разработчика"
+      <Image 
+          alt="лого разработчика"
           src={Logo}
           width={80}
-          height={100}
+          height={80}
           title="Логотип Алексей Тихонов"
           aria-label="Логотип Алексей Тихонов"
-          className="cursor-pointer"
+          className="cursor-pointer h-auto"
+          priority
         />
         <nav className="w-full">
           <ul className="flex w-full justify-evenly text-sm sm:text-xs">

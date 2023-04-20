@@ -17,7 +17,7 @@ const UserPhoto:React.FC<UserPhotoProps> = ({rotateState,show}) => {
       <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть диплом" aria-label="Посмотреть диплом" href={'https://disk.yandex.ru/i/HH4kMPGDHV-CAw'} >Диплом <span className="text-yellow-500">Я</span>П</Link>
       <Link className={`${rotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть все проекты" aria-label="Посмотреть все проекты" href={'https://github.com/mamasha59'} >GitHub</Link>
     </div>
-    <Image src={img1} width={300} alt="картинка алеши" className="shadow-xl z-30 bg-orange midl:hidden"/>
+    <Image priority src={img1} width={300} alt="картинка алеши" className="shadow-xl z-30 bg-orange midl:hidden"/>
   </div>
   )
 };

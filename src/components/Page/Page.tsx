@@ -1,5 +1,4 @@
 'use client';
-import { ContextProvider } from "@/Context/store";
 import Head from "@/components/Head/Head";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import { usePathname } from "next/navigation";
