@@ -23,7 +23,7 @@ const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
         <div className="absolute top-0 left-0 right-0 w-full h-full -z-[5]">
           <Canvas>
             <mesh>            
-            <OrbitControls enableZoom={false} autoRotate/>
+            <OrbitControls enableZoom={false} autoRotate />
             <ambientLight intensity={1.2}/>
             <directionalLight position={[3,3,3]}/>
             <Sphere args={[1,200,300]} scale={1}>

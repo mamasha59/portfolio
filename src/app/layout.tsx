@@ -5,6 +5,19 @@ import './globals.css';
 export const metadata: Metadata = { // seo
   title: 'Front-end Aleksei',
   description: 'Портфолия - Алексей Тихонов',
+  keywords: ['Front-end', 'Junior', 'Job-opened', 'Aleksei Tikhonov'],
+  authors: [{name:'Aleksei Tikhonov'}],
+  publisher: 'Aleksei Tikhonov',
+  colorScheme: 'dark',
+  themeColor: 'black',
+  category: 'technology',
+  icons:{
+    icon: {
+      url:  '/favicon.svg',
+      type: "image/svg"
+    },
+    shortcut: {  url: "/favicon.svg", type: "image/svg" }
+  }
 }
 
 interface LayoutProps{
