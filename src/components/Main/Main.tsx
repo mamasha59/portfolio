@@ -13,8 +13,8 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
   
   const [show, setShow] = useState(false);
 
-  useEffect(()=>{
-    setTimeout(()=> setShow(true),500);
+  useEffect(() => {
+    setShow(true)
   },[])
 
   return (

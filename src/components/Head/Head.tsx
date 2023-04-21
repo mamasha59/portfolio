@@ -1,10 +1,12 @@
 "use client"
-import { Canvas } from "@react-three/fiber";
-import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import dynamic from "next/dynamic";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Tech from "../Tech/Tech";
 import { RefObject, useState } from "react";
+const DynamicDecor = dynamic(()=> import('../Decor/Decor'),{loading: () =>
+  <p className="text-[red] absolute top-0 left-0 right-0 w-full h-full -z-[5] flex justify-center items-center text-xs">Loading...</p>
+}); 
 
 interface HeadProps{
   refPortfolio: RefObject<HTMLElement>;
@@ -20,18 +22,7 @@ const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
         <Header scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
         <Main scrollTo={refPortfolio} rotateState={[rotate, setRotate]}/>
         <Tech/>
-        <div className="absolute top-0 left-0 right-0 w-full h-full -z-[5]">
-          <Canvas>
-            <mesh>            
-            <OrbitControls enableZoom={false} autoRotate />
-            <ambientLight intensity={1.2}/>
-            <directionalLight position={[3,3,3]}/>
-            <Sphere args={[1,200,300]} scale={1}>
-                <MeshDistortMaterial color={'#0988e8'} attach={'material'} distort={.7} speed={2}/>
-            </Sphere>
-            </mesh>
-          </Canvas>
-        </div>
+        <DynamicDecor/>
     </header>
   )
 };
