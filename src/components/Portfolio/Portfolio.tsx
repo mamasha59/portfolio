@@ -23,7 +23,7 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
   };
 
   return (
-        <main ref={refPortfolio} className="h-screen snap-end border border-t-orange-700 flex relative">
+        <main ref={refPortfolio} className="h-screen snap-end border border-t-orange-700 flex relative z-20">
             <ListOfProjects setIndex={handleItemClick} currentIndex={activeIndex}/> 
             <CurrentProject current={current} refHead={refHead}/>
         </main>)

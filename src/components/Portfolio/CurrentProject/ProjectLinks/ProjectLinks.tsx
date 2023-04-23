@@ -16,7 +16,10 @@ const ProjectLinks:React.FC<ProjectLinksProps> = ({current}) => {
         <Image className="group-hover:animate-bounce" src={GitIcon} width={30} height={30} alt="иконка гитхаба"/>
         GitHub
       </Link>
-      <Link title="готовый деплой" aria-label="взглянуть на готовый сайт" className="flex items-center group" href={current?.projectLink || 'https://github.com/mamasha59'}> <span className="border-solid border-b-black sl:border-b-white border-b-[25px] border-x-transparent border-x-[15px] border-t-0 group-hover:rotate-180 transition-all duration-500"></span> Vercel</Link>
+      <Link title="готовый деплой" aria-label="взглянуть на готовый сайт" className="flex items-center group" href={current?.projectLink || 'https://github.com/mamasha59'}>
+        <span className="border-solid border-b-black sl:border-b-white border-b-[25px] border-x-transparent border-x-[15px] border-t-0 group-hover:rotate-180 transition-all duration-500"></span>
+        Vercel
+      </Link>
     </div>
   </div>
   )

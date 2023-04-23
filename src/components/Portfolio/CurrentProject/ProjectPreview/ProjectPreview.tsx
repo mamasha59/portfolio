@@ -1,4 +1,6 @@
 import { Project } from "@/Types/ProjectType";
+import { useAppSelector } from "@/app/Store/hooks";
+import { commonState } from "@/app/Store/slices/commonSlice";
 import Image from "next/image";
 
 interface ProjectPreviewProps {
@@ -6,12 +8,15 @@ interface ProjectPreviewProps {
 }
 
 const ProjectPreview:React.FC<ProjectPreviewProps> = ({current}) => {
+
+  const state = useAppSelector(commonState);
+
   return (
     <div className="flex relative w-full h-full justify-between overflow-hidden">
       <div className="flex flex-col justify-between midl:w-full midl:justify-center">
         <div>
           <h3 className="midl:text-2xl sl:text-xl">Полный стек</h3>
-          <ul className="text-xs flex overflow-auto w-fit h-full py-5 gap-2 capitalize text-blue-300 flex-col sl:text-[10px] sl:gap-0 sl:items-center">
+          <ul className={`text-xs flex overflow-auto w-fit h-full py-5 gap-2 capitalize  ${!state.isDark ? 'text-blue-600' : 'text-blue-300'} flex-col sl:text-[10px] sl:gap-0 sl:items-center`}>
             {current?.techStackFull.map((e, index: number) => (
               <li key={index} className="flex w-full">
                 {e}

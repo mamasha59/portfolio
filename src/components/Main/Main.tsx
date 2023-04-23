@@ -6,10 +6,9 @@ import ScrollPortfolio from "./ScrollPortfolio/ScrollPortfolio";
 
 interface MainProps{
   scrollTo: RefObject<HTMLElement>,
-  rotateState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 }
 
-const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
+const Main:React.FC<MainProps> = ({scrollTo}) => {
   
   const [show, setShow] = useState(false);
 
@@ -20,8 +19,8 @@ const Main:React.FC<MainProps> = ({scrollTo,rotateState}) => {
   return (
     <div className="pt-3 w-full max-h-[500px] h-full flex justify-around relative lg:pt-3 midl:p-0">
       <SocialMedia show={show}/>
-      <About show={show} rotateState={rotateState}/>
-      <UserPhoto show={show} rotateState={rotateState}/>
+      <About show={show}/>
+      <UserPhoto show={show}/>
       <ScrollPortfolio scrollTo={scrollTo}/>
     </div>
   )

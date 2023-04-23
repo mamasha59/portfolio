@@ -12,7 +12,7 @@ const SocialMedia:React.FC<{show:boolean}> = ({show}) => {
     const [showSocial, setShowSocial] = useState(true);
 
   return (
-    <div className={`p-1 absolute left-3 top-0 bg-[#223223] flex flex-col items-center gap-6 rounded-md max-w-[50px] ${show ? 'opacity-100 animate-bounceOnce' : 'opacity-0'} transition-all duration-100 border z-50 lg:animate-none ${!showSocial ? 'lg:translate-x-0 lg:visible' : 'lg:-translate-x-20 lg:invisible'}`}>
+    <div className={`p-1 absolute left-0 top-0 bg-[#223223] flex flex-col items-center gap-6 rounded-md max-w-[50px] ${show ? 'opacity-100 animate-bounceOnce' : 'opacity-0'} transition-all duration-100 border z-50 lg:animate-none ${!showSocial ? 'lg:translate-x-0 lg:visible' : 'lg:-translate-x-16 lg:invisible'}`}>
      <div className={`h-fit absolute -top-7 flex flex-col -right-full lg:visible lg:flex lg:pointer-events-auto transition-all ${showSocial ? 'rotate-0 animate-pulse' : 'rotate-180'}`}>
       <Image  /*кнопка показа соц сети на маленьких экранах */
         onClick={() => setShowSocial(!showSocial)}

@@ -1,14 +1,19 @@
+import { useAppSelector } from '@/app/Store/hooks';
 import Gmail from '../../../img/icons/gmail.svg';
 import Image from "next/image";
+import { commonState } from '@/app/Store/slices/commonSlice';
 
 const ButtonEmail:React.FC = () => {
+
+  const state = useAppSelector(commonState);
+
   return (
     <div className='flex items-center hover:scale-110 transition-all group text-sm mt-3 justify-end z-50' onClick={(e:React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
       <a
         title="напишите мне"
         aria-label="напишите на почту Алексею"
         href="mailto:zukko961@gmail.com"
-        className='flex bg-clip-text text-transparent text-border group-hover:text-orange transition-all duration-300 tracking-widest'
+        className={`${state.isDark ? 'text-border' : 'text-black group-hover:text-lightModeT'} flex bg-clip-text text-transparent group-hover:text-orange transition-all duration-300 tracking-widest`}
       >
       напишите мне
       <Image

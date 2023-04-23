@@ -10,11 +10,9 @@
         -webkit-text-stroke: 1px rgb(147 197 253);
     }
 }
-
-
-html {
-    --scroll-behavior: smooth!important;
-    scroll-behavior: smooth!important;
+.ligth{
+    background-color: #f5f5dc;
+    color: #000;
 }
 .perspective{
     perspective: 1000px;
@@ -24,7 +22,6 @@ html {
     backface-visibility: hidden;
     -moz-backface-visibility: hidden;
 }
-
 .back{
      transform: rotateY(180deg);
 }

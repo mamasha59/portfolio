@@ -15,10 +15,10 @@ module.exports = {
         orange: "#ff9f43",
         // 'blue': '', TODO - общий цвет
         green: "#344c36",
+        lightModeT: '#ed143d'
       },
       animation: {
         bounceOnce: "bounceOnce ease-in-out 2s",
-        shopping: "shopping 3s ease-in-out infinite",
         zoomSpace: "zoomSpace 20s alternate infinite",
         goShip: "startShip 5s ease-in-out both",
         appear: "appear 1s ease-in-out both"
@@ -27,10 +27,6 @@ module.exports = {
         bounceOnce: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(15%)" },
-        },
-        shopping: {
-          "0%, 100%": { color: "#ff9f43" },
-          "50%": { color: "#F97F51" },
         },
         zoomSpace: {
           "0%": {

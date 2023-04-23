@@ -6,13 +6,14 @@ import ReactIcon from "../../img/icons/react.svg";
 import Link from "next/link";
 
 const Tech:React.FC = () => {
+
   return (
-      <ul className="flex w-full justify-evenly py-1 border my-4 rotate-1 bg-[#223223] sm:text-xs">
+      <ul className="flex w-full justify-evenly z-20 py-1 border my-4 rotate-1 bg-[#223223] text-white sm:text-xs">
         <li>
           <Link
             title="перейти к проекту"
             aria-label="перейти к проекту что использует html"
-            href={"#"}
+            href={"https://russian-travel-lime.vercel.app/"}
             className="flex flex-col midl:items-center"
           >
             <Image src={HTML} width={30} height={30} alt="язык HTML" />
@@ -23,7 +24,7 @@ const Tech:React.FC = () => {
           <Link
             title="перейти к проекту"
             aria-label="перейти к проекту что использует CSS"
-            href={"#"}
+            href={"https://how-to-learn-five.vercel.app/"}
             className="flex flex-col midl:items-center"
           >
             <Image src={CSS} width={30} height={30} alt="язык CSS" />
@@ -33,8 +34,8 @@ const Tech:React.FC = () => {
         <li>
           <Link
             title="перейти к проекту"
-            aria-label="перейти к проекту что использует html"
-            href={"#"}
+            aria-label="перейти к проекту что использует JS"
+            href={"https://github.com/mamasha59/react-mesto-api-full"}
             className="flex flex-col midl:items-center"
           >
             <Image
@@ -49,8 +50,8 @@ const Tech:React.FC = () => {
         <li>
           <Link
             title="перейти к проекту"
-            aria-label="перейти к проекту что использует html"
-            href={"#"}
+            aria-label="перейти к проекту что использует React"
+            href={"https://mamasha59.github.io/mesto/"}
             className="flex flex-col midl:items-center"
           >
             <Image src={ReactIcon} width={30} height={30} alt="язык React" />
