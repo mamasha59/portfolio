@@ -13,7 +13,7 @@ const ButtonEmail:React.FC = () => {
         title="напишите мне"
         aria-label="напишите на почту Алексею"
         href="mailto:zukko961@gmail.com"
-        className={`${state.isDark ? 'text-border' : 'text-black group-hover:text-lightModeT'} flex bg-clip-text text-transparent group-hover:text-orange transition-all duration-300 tracking-widest`}
+        className={`${state.isDark ? 'text-border-dark' : 'text-border-light'} flex bg-clip-text text-transparent group-hover:text-orange transition-all duration-300 tracking-widest`}
       >
       напишите мне
       <Image

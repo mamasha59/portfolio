@@ -6,8 +6,11 @@
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
     }
-    .text-border{
+    .text-border-dark{
         -webkit-text-stroke: 1px rgb(147 197 253);
+    }
+    .text-border-light{
+        -webkit-text-stroke: 1px rgb(0, 2, 5);
     }
 }
 .ligth{
