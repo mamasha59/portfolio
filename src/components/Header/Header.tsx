@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from '../../img/icons/logo.svg';
 import Sun from '../../img/icons/sun.svg';
-import Moon from '../../img/icons/Moon.svg';
+import Moon from '../../img/icons/moon.svg';
 import { RefObject } from "react";
 import useScrollToSection from "@/Hooks/useScrollToSection";
 import { useAppDispatch, useAppSelector } from "@/app/Store/hooks";
