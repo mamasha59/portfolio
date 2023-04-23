@@ -1,5 +1,4 @@
-"use client"
-import { RefObject, useState } from "react";
+import { RefObject, Suspense, useState } from "react";
 import { projectsFull} from './data';
 import ListOfProjects from "./ListOfProjects/ListOfProjects";
 import CurrentProject from "./CurrentProject/CurrentProject";
@@ -24,8 +23,10 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
 
   return (
         <main ref={refPortfolio} className="h-screen snap-end border border-t-orange-700 flex relative z-20">
-            <ListOfProjects setIndex={handleItemClick} currentIndex={activeIndex}/> 
-            <CurrentProject current={current} refHead={refHead}/>
+            <ListOfProjects setIndex={handleItemClick} currentIndex={activeIndex}/>
+            <Suspense fallback={null}>
+              <CurrentProject current={current} refHead={refHead}/>
+            </Suspense>
         </main>)
 };
 

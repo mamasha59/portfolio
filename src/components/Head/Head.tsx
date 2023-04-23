@@ -1,4 +1,3 @@
-"use client"
 import dynamic from "next/dynamic";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -20,11 +19,13 @@ const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
 
   const state = useAppSelector(commonState);
   
-  useEffect(()=>{
+  useEffect(() => {
     if(!state.isDark){
-      document.body.classList.add('ligth')
+      document.body.classList.add('ligth');
+      window.localStorage.setItem('isDark', JSON.stringify(state.isDark) );
     }else{
-      document.body.classList.remove('ligth')
+      document.body.classList.remove('ligth');
+      window.localStorage.removeItem('isDark')
     }
   },[state])
 

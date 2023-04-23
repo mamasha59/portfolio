@@ -19,7 +19,7 @@ const UserPhoto:React.FC<UserPhotoProps> = ({show}) => {
       <Link className={`${state.valueRotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть диплом" aria-label="Посмотреть диплом" href={'https://disk.yandex.ru/i/HH4kMPGDHV-CAw'} >Диплом <span className="text-yellow-500">Я</span>П</Link>
       <Link className={`${state.valueRotate ? 'animate-bounce' : 'animate-none'}`} title="Посмотреть все проекты" aria-label="Посмотреть все проекты" href={'https://github.com/mamasha59'} >GitHub</Link>
     </div>
-    <Image priority src={Aleksei} width={300} alt="картинка алеши" className="rounded-sm z-30 bg-orange midl:hidden"/>
+    <Image loading="lazy" src={Aleksei} width={300} height={400} alt="картинка алеши" className="rounded-sm z-30 bg-orange midl:hidden"/>
   </div>
   )
 };
