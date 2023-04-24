@@ -39,7 +39,7 @@ export default function RootLayout({children}: LayoutProps) {
         <Providers>
             {children}
         </Providers>
-          <div className="fixed top-1/2 left-1/2 h-[1px] w-[1px] bg-[#fff] z-10 rounded-full shadow-stars animate-zoomSpace animate-pulse"></div>
+        <div className="fixed top-1/2 left-1/2 h-[1px] w-[1px] bg-[#fff] z-10 rounded-full shadow-stars animate-zoomSpace animate-pulse"></div>
       </body>
     </html>
   )

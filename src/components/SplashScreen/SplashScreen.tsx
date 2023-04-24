@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import Ship from "../../img/alienShip.svg";
 import React from "react";
+import { useAppDispatch } from "@/app/Store/hooks";
+import { switchTheme } from "@/app/Store/slices/commonSlice";
 
 interface SplashScreenProps {
   finish: Dispatch<SetStateAction<boolean>>;
@@ -9,13 +11,21 @@ interface SplashScreenProps {
 
 const SplashScreen: React.FC<SplashScreenProps> = ({ finish }) => {
 
-  useEffect(() => {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => { // лоудинг скрин
    const timeOut =  setTimeout(() => {
       finish(false);
     }, 500);
 
     return () => clearTimeout(timeOut);
   }, [finish]);
+
+  useEffect(() => { // выбрана ли светлая тема
+    if(window.localStorage.getItem('isDark') === 'false'){
+      dispatch(switchTheme())
+    }
+  },[dispatch, switchTheme])
 
   return (
     <div

@@ -4,8 +4,6 @@ import Portfolio from "@/components/Portfolio/Portfolio";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import SplashScreen from "@/components/SplashScreen/SplashScreen";
-import { useAppDispatch } from "./Store/hooks";
-import { switchTheme } from "./Store/slices/commonSlice";
 
 const Page:React.FC = () => {
 
@@ -15,18 +13,11 @@ const Page:React.FC = () => {
 
   const scrollToPortfolio = useRef<HTMLElement>(null); // блок портфолио
   const scrollToHead = useRef<HTMLElement>(null); // блок head
-  const dispatch = useAppDispatch()
 
   useEffect(() => {
     if(isLoading) return 
   },[isLoading]);
 
-  useEffect(() => {
-    if(window.localStorage.getItem('isDark') === 'false'){
-      dispatch(switchTheme())
-    }
-  },[dispatch, switchTheme])
-    
 return (
         <>
               {isLoading && isHome
