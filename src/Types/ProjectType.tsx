@@ -1,10 +1,11 @@
 import { StaticImageData } from "next/image";
 
-export type Project = {
+export type IProject = {
     idName: string;
     techStackFull: string[];
     gitLink: string;
     projectLink: string;
-    shortDescription: string;
+    shortDescriptionRu: string;
+    shortDescriptionEng: string;
     preview: StaticImageData;
 } | undefined

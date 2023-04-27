@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  productionBrowserSourceMaps: true
+  productionBrowserSourceMaps: true,
 }
 
 module.exports = nextConfig

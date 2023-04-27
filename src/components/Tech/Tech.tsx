@@ -16,7 +16,7 @@ const Tech:React.FC = () => {
             href={"https://russian-travel-lime.vercel.app/"}
             className="flex flex-col midl:items-center"
           >
-            <Image src={HTML} width={30} height={30} alt="язык HTML" />
+            <Image src={HTML} width={30} height={30} alt="HTML" />
             HTML.
           </Link>
         </li>
@@ -27,7 +27,7 @@ const Tech:React.FC = () => {
             href={"https://how-to-learn-five.vercel.app/"}
             className="flex flex-col midl:items-center"
           >
-            <Image src={CSS} width={30} height={30} alt="язык CSS" />
+            <Image src={CSS} width={30} height={30} alt="CSS" />
             CSS.
           </Link>
         </li>
@@ -42,7 +42,7 @@ const Tech:React.FC = () => {
               src={JavaScript}
               width={30}
               height={30}
-              alt="язык JavaScript"
+              alt="JavaScript"
             />
             JavaScript.
           </Link>
@@ -54,7 +54,7 @@ const Tech:React.FC = () => {
             href={"https://mamasha59.github.io/mesto/"}
             className="flex flex-col midl:items-center"
           >
-            <Image src={ReactIcon} width={30} height={30} alt="язык React" />
+            <Image src={ReactIcon} width={30} height={30} alt="React" />
             React.
           </Link>
         </li>
