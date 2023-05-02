@@ -30,8 +30,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ finish }) => {
   return (
     <div
       title="загрузочный экран, подождите"
-      aria-label="загрузочный экран, подождите"
-      className="flex justify-center items-center p-4 animate-appear flex-col relative"
+      className="bg-[#000] flex justify-center items-center p-4 animate-appear flex-col relative"
     >
       <Image
         priority

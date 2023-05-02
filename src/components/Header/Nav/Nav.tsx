@@ -6,7 +6,7 @@ import Image from "next/image";
 import Sun from '../../../img/icons/sun.svg';
 import Moon from '../../../img/icons/moon.svg';
 import { RefObject } from "react";
-import { languages } from "@/lang/lang";
+import {languages} from "@/lang/lang";
 
 interface NavProps {
     scrollTo: RefObject<HTMLElement>,
@@ -18,6 +18,11 @@ const Nav:React.FC<NavProps> = ({scrollTo}) => {
     const state = useAppSelector(commonState);
     const scrollToSection  = useScrollToSection();
     const text = languages.header[state.langDefault];
+
+    const handelClickTheme = () =>{
+        dispatch(switchTheme());
+        window.localStorage.setItem('isDark', JSON.stringify(!state.isDark));
+    }
 
   return (
     <nav className="w-full z-20 flex">
@@ -34,7 +39,10 @@ const Nav:React.FC<NavProps> = ({scrollTo}) => {
                 </Link>
             </li>
         </ul>
-        <button title={state.langDefault === 'rus' ? "тема:светлый/темный" : 'theme:light/dark'} aria-label={state.langDefault === 'rus' ? "тема:светлый/темный" : 'theme:light/dark'} onClick={()=> dispatch(switchTheme())} className="group w-fit h-fit">
+        <button
+            title={state.langDefault === 'rus' ? "тема:светлый/темный" : 'theme:light/dark'}
+            aria-label={state.langDefault === 'rus' ? "тема:светлый/темный" : 'theme:light/dark'}
+            onClick={handelClickTheme} className="group w-fit h-fit">
             {state.isDark 
                 ? <Image className="group-hover:animate-spin transition-all sl:group-hover:animate-none" src={Sun} width={40} height={40} alt={state.langDefault === 'rus' ? "иконка солнца" : 'icon of sun'}/>
                 : <Image src={Moon} width={40} height={40} alt={state.langDefault === 'rus' ? "иконка луны" : 'icon of sun'}/>

@@ -4,7 +4,7 @@ import About from "./About/About";
 import UserPhoto from "./UserPhoto/UserPhoto";
 import ScrollPortfolio from "./ScrollPortfolio/ScrollPortfolio";
 import { useAppDispatch } from "@/app/Store/hooks";
-import { switchLang } from "@/app/Store/slices/commonSlice";
+import {  switchLang } from "@/app/Store/slices/commonSlice";
 
 interface MainProps{
   scrollTo: RefObject<HTMLElement>,
@@ -21,7 +21,7 @@ const Main:React.FC<MainProps> = ({scrollTo}) => {
   }
 
   useEffect(() => {
-    setShow(true)
+    setShow(true);
   },[show])
 
   return (

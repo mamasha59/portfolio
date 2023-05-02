@@ -20,17 +20,16 @@ const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
   const state = useAppSelector(commonState);
   
   useEffect(() => {
-    if(!state.isDark){
-      document.body.classList.add('ligth');
-      window.localStorage.setItem('isDark', JSON.stringify(state.isDark) );
+    if(state.isDark){
+      document.body.classList.add('dark');
     }else{
-      document.body.classList.remove('ligth');
-      window.localStorage.removeItem('isDark')
+      document.body.classList.remove('dark');
+      document.body.classList.add('ligth');
     }
-  },[state])
+  },[state.isDark])
 
   return (
-    <header ref={refHead} className="h-screen px-3 py-4 snap-center relative flex justify-between flex-col">
+    <header ref={refHead} className={`${state.isDark ? 'bg-[#000]' : 'bg-[#f5f5dc]'} h-screen px-3 py-4 snap-center relative flex justify-between flex-col`}>
         <Header scrollTo={refPortfolio}/>
         <Main scrollTo={refPortfolio}/>
         <Tech/>

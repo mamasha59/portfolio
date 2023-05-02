@@ -25,7 +25,7 @@ const Header:React.FC<HeaderProps> = ({scrollTo}) => {
           className="cursor-pointer h-auto z-20"
           priority
         />
-      <Nav scrollTo={scrollTo}/>
+      <Nav scrollTo={scrollTo}/> 
     </div>
   )
 };
