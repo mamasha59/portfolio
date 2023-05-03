@@ -28,7 +28,7 @@ const CurrentProject:React.FC<CurrentProjectProps> = ({current,refHead}) => {
     }
 
   return (
-    <div className="flex w-full h-full p-3 flex-col relative">
+    <div className="flex w-full h-full z-20 p-3 flex-col relative">
       <ProjectPreview current={current}/>
       <ProjectLinks current={current}/>
       <Image

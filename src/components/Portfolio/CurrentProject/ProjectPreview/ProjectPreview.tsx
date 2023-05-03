@@ -30,7 +30,7 @@ const ProjectPreview:React.FC<ProjectPreviewProps> = ({current}) => {
       </div>
       <div className="max-w-lg w-fit midl:hidden p-3">
         <Image
-          src={current?.preview || ""}
+          src={current?.preview || ''}
           alt={current?.idName || ''}
           width={500}
           height={200}

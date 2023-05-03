@@ -35,8 +35,8 @@ const UserPhoto:React.FC<UserPhotoProps> = ({show}) => {
       </Link>
     </div>
     <Image
-      loading="lazy"
       src={Aleksei}
+      priority 
       width={300}
       height={400}
       alt={state.langDefault === 'rus' ? "Фото Алексей" : 'Aleksei\'s photo'}

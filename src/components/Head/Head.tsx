@@ -15,7 +15,7 @@ interface HeadProps{
   refHead: RefObject<HTMLElement>;
 }
 
-const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {
+const Head:React.FC<HeadProps> = ({refPortfolio,refHead}) => {  
 
   const state = useAppSelector(commonState);
   

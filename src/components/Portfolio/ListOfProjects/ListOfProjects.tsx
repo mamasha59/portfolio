@@ -1,24 +1,25 @@
 import Image from "next/image";
 import Dot from '../../../img/icons/dot.svg';
-import { projects } from "../data";
 import { useAppSelector } from "@/app/Store/hooks";
 import { commonState } from "@/app/Store/slices/commonSlice";
+import { IProjectShort } from "@/Types/ProjectType";
 
 type handleItemClick =  (index: number, name: string) => void;
 
 interface ListOfProjectsProps{
-    currentIndex: number | null,
-    setIndex: handleItemClick
+    currentIndex: number | null;
+    setIndex: handleItemClick;
+    projectsShort: IProjectShort[] | undefined;
 }
 
-const ListOfProjects:React.FC<ListOfProjectsProps> = ({setIndex,currentIndex}) => {
+const ListOfProjects:React.FC<ListOfProjectsProps> = ({setIndex,currentIndex,projectsShort}) => {
  
     const state = useAppSelector(commonState);
 
   return (
-    <aside className="flex justify-start py-6 flex-col overflow-y-auto sl:justify-center sl:px-3 sl:max-w-[40%]">
+    <aside className="flex z-20 justify-start py-6 flex-col overflow-y-auto sl:justify-center sl:px-3 sl:max-w-[40%]">
 
-        {projects.map((i,index:number) =>
+        {projectsShort?.map((i,index:number) =>
         <div key={index} className="flex flex-col p-4 rounded-2xl sm:p-0">
             <h2 onClick={() => setIndex(index,i.titleRu)}
              className={`${state.isDark ? 'text-orange' : 'text-lightModeT'} capitalize cursor-pointer ${currentIndex === index ? 'opacity-100 underline' : 'opacity-50'} sm:text-base`}>
