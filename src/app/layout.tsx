@@ -25,16 +25,16 @@ interface LayoutProps{
   children: React.ReactNode;
 }
 
-const inter = Seymour_One({ // общий шрифт для всего проекта
+const seymour = Seymour_One({ // общий шрифт для всего проекта
+  weight: ["400"],
   subsets: ['cyrillic'],
   display: "swap",
-  weight: ["400"],
 })
 
 export default function RootLayout({children}: LayoutProps) {
  
   return (
-    <html className={`h-screen snap-y snap-mandatory scroll-smooth overflow-y-auto hide-scrollbar ${inter.className}`} lang="ru">
+    <html className={`h-screen snap-y snap-mandatory scroll-smooth overflow-y-auto hide-scrollbar ${seymour.className}`} lang="ru">
       <body className='text-lg max-w-7xl mx-auto bg-[#000]'>
         <Providers>
             {children}
