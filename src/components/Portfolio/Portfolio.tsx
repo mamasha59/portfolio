@@ -17,6 +17,7 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
 
   const [projects, setProjects] = useState<IProjects>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const state = useAppSelector(commonState);
 
   useEffect(() => { // загрузка проектов
     const getData = async () => {
@@ -26,14 +27,12 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
         setProjects(data.projects);
       } catch (error) {
         alert('ошибка при загрузке данных');
-      } finally{
+      } finally {
         setIsLoading(false);
       }
     }
     getData();
   },[])
-  
-  const state = useAppSelector(commonState);
 
   const current = projects?.projectsFull?.find(item => item?.idName === projectName); // по имени проекта ищем полную информацию
 
@@ -50,7 +49,8 @@ const Portfolio:React.FC<PortfolioProps> = ({refPortfolio,refHead}) => {
             <Suspense fallback={null}>
               <CurrentProject current={current} refHead={refHead}/>
             </Suspense>
-        </main>)
+        </main>
+  )
 };
 
 export default Portfolio;

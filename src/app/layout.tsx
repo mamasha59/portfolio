@@ -37,7 +37,7 @@ export default function RootLayout({children}: LayoutProps) {
     <html className={`h-screen snap-y snap-mandatory scroll-smooth overflow-y-auto hide-scrollbar ${seymour.className}`} lang="ru">
       <body className='text-lg max-w-7xl mx-auto bg-[#000]'>
         <Providers>
-            {children}
+          {children}
         </Providers>
       </body>
     </html>
