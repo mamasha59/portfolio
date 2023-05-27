@@ -40,7 +40,7 @@ const UserPhoto:React.FC<UserPhotoProps> = ({show}) => {
       width={300}
       height={400}
       alt={state.langDefault === 'rus' ? "Фото Алексей" : 'Aleksei\'s photo'}
-      className="rounded-sm z-30 bg-orange midl:hidden"/>
+      className="rounded-sm z-30 midl:hidden"/>
   </div>
   )
 };
